@@ -1,0 +1,47 @@
+Bounce Defense 1.19.8 — ad-free build
+=====================================
+
+Two files, they must be installed TOGETHER (the game is an app bundle: the base
+APK plus the arm64 native-library split):
+
+  BounceDefense-1.19.8-noads-base.apk     (181 MB)
+  BounceDefense-1.19.8-noads-arm64.apk    (31 MB)
+
+Requirements: Android 8.0+ (minSdk 26), arm64 device (any modern phone).
+
+
+OPTION A — no PC, install on the phone (recommended for sharing)
+----------------------------------------------------------------
+1. Copy both .apk files to the phone (cable, Google Drive, Telegram, ...).
+2. Install "SAI" (Split APKs Installer) from F-Droid or Play Store.
+   Any split/bundle installer works: SAI, APKPure Installer, APKMirror Installer.
+3. Open SAI -> "Install APKs" -> select BOTH files -> Install.
+4. Allow "install unknown apps" for SAI when prompted.
+
+If the Play Store version of the game is installed, uninstall it first
+(different signing key) — that also deletes the local save.
+
+
+OPTION B — with a PC and adb
+----------------------------
+  adb uninstall com.minigamelab.bouncedefense
+  adb install-multiple BounceDefense-1.19.8-noads-base.apk BounceDefense-1.19.8-noads-arm64.apk
+
+Do NOT use a plain single-file install; Android rejects a lone base APK of a
+split app with INSTALL_FAILED_MISSING_SPLIT.
+
+
+WHAT YOU GET
+------------
+* No forced interstitials, no banner, no app-open ad, no audio ads.
+* Reward buttons (revive, x2, free chest) pay out instantly with no video.
+* Ads can never display, so no ad SDK can interrupt play.
+
+Notes
+-----
+* The game is PatchIP/PairIP-protected: the unmodified APK silently exits unless
+  it was installed by the Play Store. This build patches that check, so it runs
+  from any installer. Keep that in mind if you rebuild from a newer version.
+* Turn OFF auto-update for the game in the Play Store, otherwise Play will
+  replace this build with the stock one (and the ads come back).
+* Signed with a local test key, not the developer key.

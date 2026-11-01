@@ -1,0 +1,27 @@
+# ---- game files (never commit; obtain your own copy) ----
+splits/
+local/
+*.apk
+*.apks
+*.xapk
+*.idsig
+
+# ---- build outputs / signed artifacts ----
+build/
+share/*.apk
+*.keystore
+*.jks
+
+# ---- third-party tool binaries ----
+Tools/
+
+# ---- regenerable analysis output ----
+analysis/*.txt
+analysis/*.json
+analysis/__pycache__/
+__pycache__/
+*.pyc
+
+# ---- scratch ----
+shots/
+*.log

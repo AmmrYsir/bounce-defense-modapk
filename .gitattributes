@@ -1,0 +1,5 @@
+# normalise line endings; the scripts are cross-platform apart from build.ps1
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.png binary
+*.apk binary
