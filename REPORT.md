@@ -29,7 +29,7 @@ does nothing. The game's own forced-ad product is `bd_no_ads` ("remove forced ad
 
 Metadata is v39, which stock Il2CppDumper rejects; the
 [`lxraa` fork v6.7.46](https://github.com/lxraa/Il2CppDumper/releases/tag/v6.7.46-lxraa.1) supports v32–v39,
-so `analysis/il2cpp/dump.cs` (24 MB, with RVAs) was produced offline. `analysis/xref.py` builds a function
+so `local/work/retarget/dump/dump.cs` (24 MB, with RVAs) was produced offline. `analysis/xref.py` builds a function
 map from it and scans `.text`/`il2cpp` for `BL`, which produced the call graph above (e.g. exactly 23 callers
 of `AdsSelfManager::ShowAds`; `AdsSystem::ShowReward/ShowBanner` have 0 → dead code).
 
@@ -87,7 +87,7 @@ plain `adb install` gives a 3-second black screen.
 ```
 pwsh -File build.ps1 -Variant instant   # or -Variant safe
 adb uninstall com.minigamelab.bouncedefense
-adb install-multiple -i com.android.vending build\instant\base.apk build\instant\split_config.arm64_v8a.apk
+adb install-multiple build\instant\base.apk build\instant\split_config.arm64_v8a.apk
 ```
 
 Signed with a local key (`build/mod.keystore`, alias `modkey`, store/key pass `modstore`), v2+v3, minSdk 26.
@@ -149,3 +149,4 @@ the split pair is the supported route.
 4. `instant` grants rewarded-ad payouts for free (revives, 2× rewards) — that is a gameplay change by design.
 5. PairIP can also be updated server-side by Google for newer builds; a rebuild from a future version may
    need the same treatment again.
+
